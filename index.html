@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>抽奖程序</title>
+    <link rel="stylesheet" href="common/css/common.css">
+    <link rel="stylesheet" href="index/css/index.css">
+    <script src="common/js/api.js"></script>
+    <script src="common/js/jquery.min.js"></script>
+    <!-- 移动端适配 -->
+    <script>
+        var html = document.querySelector('html');
+        changeRem();
+        window.addEventListener('resize', changeRem);
+
+        function changeRem() {
+            var width = html.getBoundingClientRect().width;
+            html.style.fontSize = width / 10 + 'px';
+        }
+    </script>
+</head>
+
+<body>
+<section id="wrap">
+    <section id="sectionLoop" class="gift">
+        <h2 class="title tit1"></h2>
+        <ul id="sectionUlLoop"></ul>
+    </section>
+</section>
+<script>
+    let activitys = getApiActivitys({});
+    let sectionLoop = document.getElementById("sectionUlLoop");
+    for (let i = 0; i < activitys.length; i++) {
+        let activity = activitys[i];
+        let href = null;
+        let imgSrc = null;
+        switch (activity['lotteryTypeCode']) {
+            case "Wheel":
+                href = `game/luckywheel/index.html?activityCode=${activity['code']}`;
+                imgSrc = "index/image/gift1.png"
+                break;
+            case "Egg":
+                href =  `game/goldenEgg/index.html?activityCode=${activity['code']}`;
+                imgSrc = "index/image/gift2.png"
+                break;
+        }
+        sectionLoop.innerHTML += `
+                 <li>
+                <a href="${href}">
+                    <img src="${imgSrc}" alt="">
+                    <div class="clearfix">
+                        <p>${activity['name']}</p>
+                        <span>立即参与</span>
+                    </div>
+                </a>
+            </li>`
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

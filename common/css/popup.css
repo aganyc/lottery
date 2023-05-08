@@ -1,0 +1,286 @@
+@charset "utf-8";
+/* ----------------------------------------------------------登录弹窗--------------------------------------------------------------------------- */
+.bg-mask {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+}
+.inputInfo {
+    visibility: hidden;
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 10003;
+    width: 360px;
+    height: 300px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.4);
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+/* line 132, ../sass/model/_alert.scss */
+.inputInfo.active {
+    top: 50%;
+    visibility: visible;
+    width: 360px;
+    height: 300px;
+}
+/* line 139, ../sass/model/_alert.scss */
+.inputInfo .inputInfoTitle {
+    font-size: 24px;
+    line-height: 50px;
+    height: 50px;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    background-image: -webkit-linear-gradient(#F9DBA1 50%, #D0AB71 100%);
+    /* Opera 11.1 - 12.0 */
+    background: -o-linear-gradient(#F9DBA1 50%, #D0AB71 100%);
+    /* Firefox 3.6 - 15 */
+    background: -moz-linear-gradient(#F9DBA1 50%, #D0AB71 100%);
+    /* 标准的语法 */
+    background: linear-gradient(#f9dba1 50%, #d0ab71 100%);
+    -webkit-background-clip: text;
+    font-weight: bold;
+    -webkit-text-fill-color: transparent;
+}
+/* line 160, ../sass/model/_alert.scss */
+.inputInfo .userNameDiv {
+    left: 50%;
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+    top: 85px;
+    height: 40px;
+    line-height: 40px;
+    width: 84%;
+}
+/* line 169, ../sass/model/_alert.scss */
+.inputInfo .userNameDiv label {
+    width: 20%;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    padding-right: 4%;
+    color: #FCFDA0;
+}
+/* line 177, ../sass/model/_alert.scss */
+.inputInfo .userNameDiv .nameInput {
+    width: 76%;
+    height: 32px;
+    outline: none;
+    border: none;
+    font-family: "Microsoft YaHei";
+    text-indent: 5px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+/* line 191, ../sass/model/_alert.scss */
+.inputInfo .enoDiv {
+    left: 50%;
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+    top: 145px;
+    height: 40px;
+    line-height: 40px;
+    width: 84%;
+}
+/* line 200, ../sass/model/_alert.scss */
+.inputInfo .enoDiv label {
+    width: 20%;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    padding-right: 4%;
+    color: #FCFDA0;
+}
+/* line 208, ../sass/model/_alert.scss */
+.inputInfo .enoDiv .enoInput {
+    width: 76%;
+    height: 32px;
+    outline: none;
+    font-family: "Microsoft YaHei";
+    border: none;
+    text-indent: 5px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+/* line 222, ../sass/model/_alert.scss */
+.inputInfo .closeLogin {
+    width: 28px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+/* line 230, ../sass/model/_alert.scss */
+.inputInfo .submitTijiao {
+    bottom: 32px;
+    position: absolute;
+    height: 36px;
+    width: 80%;
+    left: 50%;
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border: none;
+    background: #33D92A;
+    color: #fff;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+}
+/* line 246, ../sass/model/_alert.scss */
+.inputInfo .submitTijiao:hover {
+    background: #24A91D;
+}
+
+
+/* ----------------------------------------------------------消息弹窗--------------------------------------------------------------------------- */
+.msg-main {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-size: 100% 100%;
+    position: absolute;
+    overflow: hidden;
+    *zoom: 1;
+    z-index: 10;
+    left: center;
+    top: 0;
+}
+
+.msg-main .txzl {
+    width: 70%;
+    height: auto;
+    position: absolute;
+    top: 28%;
+    left: 15%;
+    background: white;
+    border-radius: 5px;
+    color: #7A312D;
+    text-align: center;
+    font-size: 4vw;
+    line-height: 6vw;
+}
+.msg-main .txzl .msg_text{
+    margin: 6vw auto;
+}
+.txzl h3 {
+    font-size: 3.2rem;
+    font-weight: bold;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    color: #e32d2c;
+    line-height: 140%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.txzl h2 {
+    font-size: 3.0rem;
+    font-weight: bold;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    color: #e32d2c;
+    line-height: 140%;
+    text-align: center;
+}
+
+.txzl p {
+    font-size: 2.6rem;
+    width: 90%;
+    height: auto;
+    margin: 1% auto 0 auto;
+    color: #232323;
+    line-height: 150%;
+    text-align: center;
+}
+
+.txzl label {
+    width: 90%;
+    height: auto;
+    margin: 3% auto 0 auto;
+    font-size: 2.6rem;
+    color: #232323;
+    display: block;
+    text-align: center;
+}
+
+.txzl label input {
+    height: auto;
+    font-size: 2.6rem;
+    border: none;
+    line-height: 180%;
+}
+
+.txzl h4 {
+    font-size: 2.6rem;
+    font-weight: bold;
+    width: 100%;
+    height: auto;
+    margin: 3% auto 0 auto;
+    color: #e32d2c;
+    line-height: 140%;
+    text-align: center;
+}
+
+.txzl .info_tj {
+    width: 50%;
+    height: auto;
+    font-size: 3rem;
+    line-height: 180%;
+    color: #ffffff;
+    text-align: center;
+    background: #ad0004;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin: 4% auto 6% auto
+}
+
+.msg-main .close_msg {
+    width: 25vw;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+    line-height: 9vw;
+    color: #E1CE85;
+    background: #BA2D1C;
+    border-radius: 5px;
+    font-size: 4vw;
+}

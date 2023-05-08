@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>砸金蛋</title>
+    <link rel="stylesheet" href="../../common/css/common_mobile.css?version=1.0.0">
+    <link rel="stylesheet" href="css/index.css?version=1.0.0">
+    <link rel="stylesheet" type="text/css" href="../../common/css/popup.css">
+    <link rel="stylesheet" href="../../common/css/swiper.min.css">
+    <!-- 移动端适配-->
+    <script>
+        var html = document.querySelector('html');
+        changeRem();
+        window.addEventListener('resize', changeRem);
+
+        function changeRem() {
+            var width = html.getBoundingClientRect().width;
+            //console.log( width );
+            html.style.fontSize = width / 10 + 'px';
+        }
+    </script>
+</head>
+
+<body>
+<div id="wrap">
+    <div class="bg"></div>
+    <div class="rule"></div>
+<!--    <a href="../my.html" id="myWin">-->
+<!--        <div class="my">我的奖品</div>-->
+<!--    </a>-->
+    <!--砸蛋区域-->
+    <div class="box">
+        <p class="tips">抽奖次数剩余<span id="change">1</span>次</p>
+        <div id="hammer" class="shak"></div>
+        <ul class="egg clearfix">
+            <li>
+                <img src="image/egg.png" class="goldegg init" alt="">
+                <img src="image/base.png" alt="">
+                <div class="info"></div>
+            </li>
+            <li>
+                <img src="image/egg.png" class="goldegg init" alt="">
+                <img src="image/base.png" alt="">
+                <div class="info"></div>
+            </li>
+            <li>
+                <img src="image/egg.png" class="goldegg init" alt="">
+                <img src="image/base.png" alt="">
+                <div class="info"></div>
+            </li>
+            <li>
+                <img src="image/egg.png" class="goldegg init" alt="">
+                <img src="image/base.png" alt="">
+                <div class="info"></div>
+            </li>
+            <li>
+                <img src="image/egg.png" class="goldegg init" alt="">
+                <img src="image/base.png" alt="">
+                <div class="info"></div>
+            </li>
+            <li>
+                <img src="image/egg.png" class="goldegg init" alt="">
+                <img src="image/base.png" alt="">
+                <div class="info"></div>
+            </li>
+            <li>
+                <img src="image/egg.png" class="goldegg init" alt="">
+                <img src="image/base.png" alt="">
+                <div class="info"></div>
+            </li>
+            <li>
+                <img src="image/egg.png" class="goldegg init" alt="">
+                <img src="image/base.png" alt="">
+                <div class="info"></div>
+            </li>
+            <li>
+                <img src="image/egg.png" class="goldegg init" alt="">
+                <img src="image/base.png" alt="">
+                <div class="info"></div>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <!--游戏规则弹窗-->
+    <div id="mask-rule">
+        <div class="box-rule">
+            <span class="star"></span>
+            <h2>活动规则说明</h2>
+            <span id="close-rule"></span>
+            <div class="con">
+                <div class="text" id="rule-text">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--中奖提示-->
+    <div id="mask">
+        <div class="blin"></div>
+        <div class="caidai"></div>
+        <div class="winning">
+            <div class="red-head"></div>
+            <div class="red-body"></div>
+            <div id="card">
+                <a href="" target="_self" class="win"></a>
+            </div>
+            <a href="" target="_self" class="btn"></a>
+            <span id="close"></span>
+        </div>
+    </div>
+</div>
+
+<!--奖品展示-->
+<div class="awards">
+    <img src="../../common/image/prize/prize.png" class="prize" alt="">
+    <div class="swiper-container">
+        <marquee>
+        <ul class="swiper-wrapper"  id="swiper-wrapper"></ul>
+        </marquee>
+    </div>
+</div>
+
+<script src="../../common/js/jquery.min.js"></script>
+<script src="../../common/js/jquery.cookie.js"></script>
+<script src="../../common/js/common.js?version=1.0.0"></script>
+<script src="js/index.js?version=1.0.0"></script>
+<script src="../../common/js/api.js"></script>
+<script src="../../common/js/utility.js"></script>
+<script src="../../common/js/swiper.jquery.min.js"></script>
+<script src="../../common/js/clickThrottle.js"></script>
+</body>
+</html>
