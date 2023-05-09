@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="index/css/index.css">
     <script src="common/js/api.js"></script>
     <script src="common/js/jquery.min.js"></script>
+    <script src="common/js/utility.js"></script>
     <!-- 移动端适配 -->
     <script>
         var html = document.querySelector('html');
@@ -32,6 +33,8 @@
 <script>
     let activitys = getApiActivitys({});
     let sectionLoop = document.getElementById("sectionUlLoop");
+    let eno=getQueryString("eno");
+    let name=getQueryString("name");
     for (let i = 0; i < activitys.length; i++) {
         let activity = activitys[i];
         let href = null;
@@ -46,6 +49,10 @@
                 imgSrc = "index/image/gift2.png"
                 break;
         }
+        if (eno&&name){
+            href +=`&eno=${eno}&name=${name}`;
+        }
+
         sectionLoop.innerHTML += `
                  <li>
                 <a href="${href}">
